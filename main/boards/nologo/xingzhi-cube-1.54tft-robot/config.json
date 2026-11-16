@@ -1,0 +1,14 @@
+{
+    "manufacturer": "nologo",
+    "type": "xingzhi-cube-1.54tft-robot",
+    "target": "esp32s3",
+    "builds": [
+        {
+            "name": "xingzhi-cube-1.54tft-robot",
+            "sdkconfig_append": [
+                "CONFIG_BT_ENABLED=y",
+                "CONFIG_BT_NIMBLE_ENABLED=y"
+            ]
+        }
+    ]
+}
