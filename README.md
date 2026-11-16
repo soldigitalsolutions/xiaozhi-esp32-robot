@@ -1,45 +1,53 @@
-# Xiaozhi ESP32-S3 Custom Robot Firmware 🤖
+# Upcycled AI Companion Robot — ESP32-S3 🤖♻️
 
-Custom firmware fork based on [78/xiaozhi-esp32](https://github.com/78/xiaozhi-esp32), adapted by **Sol Digital Solutions (EPamar)** for an interactive desktop companion robot built on **ESP32-S3**.
-
----
-
-### ✨ Custom Features & Modifications
-
-* **Dedicated Robot Motion Controller (`robot_controller`):** Custom servo choreography, expressive movements, and physical action triggers synchronized with voice interaction states.
-* **Custom Board Integration:** Adapted around the `xingzhi-cube-1.54tft-wifi` board configuration with a 1.54" TFT display, onboard audio I/O, and battery power management (`power_manager`).
-* **Live Internet Radio Streaming:** Compatible with [xiaozhi-radio-server](https://github.com/soldigitalsolutions/xiaozhi-radio-server) to stream real-time Ogg/Opus transcoded radio stations directly on the robot.
-* **MCP & Real-Time Voice AI:** Retains full Xiaozhi AI capabilities (wake word detection, WebSocket/MQTT+UDP audio streaming, and MCP device control).
+An interactive, voice-controlled desktop and mobile companion robot built from **recycled materials** and powered by an **ESP32-S3** microcontroller. Engineered as a collaborative hardware and AI build by **EPamar** ([Sol Digital Solutions](https://github.com/soldigitalsolutions)) and **Fredy**.
 
 ---
 
-### 🛠️ Hardware Architecture
+### 🌟 What Makes This Robot Unique
 
-* **Microcontroller:** ESP32-S3 (N16R8 / 1.54" TFT Cube variant)
-* **Actuators & Motion:** Multi-servo drive system (PCA9685 / PWM control) + custom 3D-printed chassis
-* **Audio & Display:** 1.54" IPS TFT screen, I2S microphone & amplifier/speaker
-* **Power Supply:** Rechargeable 18650 Li-ion battery system with voltage/power management
+Unlike standard dev-board builds, this project combines **sustainable upcycled mechanical fabrication** with **embodied Conversational AI**:
+
+* **Upcycled Chassis & Mechanics:** Custom body, head, and articulated arms crafted from recycled materials.
+* **Custom Animated Face UI:** Replaced the stock interface on the 1.54" TFT display with a custom expressive robot face synchronized with speech and interaction states.
+* **Voice-Triggered Physical Actions (AI + MCP):** Speak naturally to the robot and it executes real-world movements—waving, turning its head, gesturing with its arms, and driving forward/backward/turning via custom MCP tool hooks in the firmware.
+* **Full Kinematics & Locomotion:**
+  * **Head & Arms:** Servo motors mapped to custom ESP32-S3 GPIO pins for expressive gestures and greetings.
+  * **Drive System:** Traction motors controlled directly by the ESP32-S3 for physical movement.
+* **Optional Live Radio Streaming:** Supports streaming Ogg/Opus internet radio via [xiaozhi-radio-server](https://github.com/soldigitalsolutions/xiaozhi-radio-server).
+
+---
+
+### 🛠️ Hardware & Control Architecture
+
+* **Brain / MCU:** ESP32-S3 (`xingzhi-cube-1.54tft-wifi` base architecture)
+* **Face Display:** 1.54" IPS TFT screen running custom facial animations
+* **Actuators:**
+  * Servo motors (head pan/tilt & articulated arms)
+  * DC drive motors + motor driver stage for locomotion
+* **Audio I/O:** Onboard I2S microphone (wake-word & voice recognition) + speaker output
+* **Power:** Rechargeable 18650 Li-ion battery pack with onboard power management
 
 ---
 
 ### 🚀 Build & Flash (ESP-IDF)
 
-1. Open the project folder in **VS Code** with the **ESP-IDF** extension installed (ESP-IDF v5.4+ recommended).
-2. Select target `esp32s3` and verify the board configuration in `menuconfig` (`Xingzhi Cube 1.54 TFT WiFi`).
-3. Build, flash, and monitor via USB:
+1. Open the repository in **VS Code** with the **ESP-IDF** extension (v5.4+ recommended).
+2. Set the target chip and verify pin assignments in `main/boards/nologo/` and `robot_controller`:
    ```bash
    idf.py set-target esp32s3
    idf.py build flash monitor
    ```
-4. Connect to the robot's captive Wi-Fi portal on first boot to configure your local network credentials (stored safely in NVS flash).
+3. On first boot, connect to the robot's Wi-Fi captive portal to save your network credentials directly into NVS flash.
 
 ---
 
-### 🙏 Credits & Support
+### 🤝 Credits & Support
 
-* **Upstream Firmware:** Built upon the open-source [xiaozhi-esp32](https://github.com/78/xiaozhi-esp32) project (MIT License).
-* **Maintained by:** **EPamar** — [Sol Digital Solutions](https://github.com/soldigitalsolutions)
+* **Hardware Fabrication & Mechanical Assembly:** **Fredy** & **EPamar**
+* **Firmware Customization, Custom Face & AI Integration:** **EPamar** — [Sol Digital Solutions](https://github.com/soldigitalsolutions)
+* **Base Firmware:** Adapted from the open-source [78/xiaozhi-esp32](https://github.com/78/xiaozhi-esp32) project (MIT License).
 
-If this firmware mod or hardware build helps your project, consider supporting my open-source work:
+If our upcycled robotics build or firmware modifications inspire your own projects, consider supporting our work:
 
 [![Support me on Ko-fi](https://img.shields.io/badge/Support%20me%20on-Ko--fi-FF5E5B?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/soldigitalsolutions)
