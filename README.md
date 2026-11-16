@@ -30,3 +30,16 @@ Custom firmware fork based on [78/xiaozhi-esp32](https://github.com/78/xiaozhi-e
    ```bash
    idf.py set-target esp32s3
    idf.py build flash monitor
+   ```
+4. Connect to the robot's captive Wi-Fi portal on first boot to configure your local network credentials (stored safely in NVS flash).
+
+---
+
+### 🙏 Credits & Support
+
+* **Upstream Firmware:** Built upon the open-source [xiaozhi-esp32](https://github.com/78/xiaozhi-esp32) project (MIT License).
+* **Maintained by:** **EPamar** — [Sol Digital Solutions](https://github.com/soldigitalsolutions)
+
+If this firmware mod or hardware build helps your project, consider supporting my open-source work:
+
+[![Support me on Ko-fi](https://img.shields.io/badge/Support%20me%20on-Ko--fi-FF5E5B?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/soldigitalsolutions)
